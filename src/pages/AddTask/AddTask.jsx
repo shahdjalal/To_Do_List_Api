@@ -5,20 +5,17 @@ import style from "./AddTask.module.css";
 import { ThemeContext } from "../../components/context/ThemeContext";
 import { toast } from "react-toastify";
 import axios from "axios";
-import { useForm } from "react-hook-form";
+import { ErrorMessage, Field, Form, Formik } from "formik";
+import * as Yup from "yup";
 
 export default function AddTask() {
   const { darkMode } = useContext(ThemeContext);
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm();
+  const validationSchema = Yup.object({
+    taskText: Yup.string().required("Task is required"),
+  });
 
-
-  const addTask = async (taskText) => {
+  const addTask = async (taskText, resetForm) => {
     if (!taskText.trim()) {
       toast.error("Task cannot be empty!", { autoClose: 2000 });
       return;
@@ -39,7 +36,7 @@ export default function AddTask() {
         theme: "light",
       });
 
-      reset();
+      resetForm();
     } catch (err) {
       console.error(err);
       toast.error("Failed to add task!", { autoClose: 2000 });
@@ -53,25 +50,37 @@ export default function AddTask() {
           <CiBoxList className={style.taskIcon} /> What do you want to achieve
           today ...
         </p>
-        <form
-          onSubmit={handleSubmit((data) => addTask(data.taskText))}
-          className={style.taskBox}
+      
+
+        <Formik
+          initialValues={{ taskText: "" }}
+          validationSchema={validationSchema}
+          onSubmit={(values, { resetForm }) => {
+            addTask(values.taskText, resetForm);
+          }}
         >
-          <input
-            {...register("taskText", { required: "Task is required" })}
-            className={style.taskInput}
-            placeholder="Add your task . . ."
-          />
-          <button
-            className={`${style.addBtn} ${darkMode ? style.dark : ""}`}
-            type="submit"
-          >
-            ADD <IoMdAdd />
-          </button>
-        </form>
-        {errors.taskText && (
-          <p className={style.error}>{errors.taskText.message}</p>
-        )}
+          <Form className={style.taskBox}>
+            <Field
+              name="taskText"
+              className={style.taskInput}
+              placeholder="Add your task . . ."
+            />
+            <ErrorMessage
+              name="taskText"
+              component="p"
+              className={style.error}
+            />
+
+            <button
+              className={`${style.addBtn} ${darkMode ? style.dark : ""}`}
+              type="submit"
+            >
+              ADD <IoMdAdd />
+            </button>
+          </Form>
+        </Formik>
+
+
       </div>
     </header>
   );

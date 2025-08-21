@@ -1,5 +1,4 @@
 
-
 header {
   height: 90vh;
   display: flex;
@@ -82,7 +81,7 @@ header {
 }
 
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1000px) {
   .taskInput {
     width: 100%;
   }
