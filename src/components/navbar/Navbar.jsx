@@ -61,13 +61,19 @@ const{darkMode,toggleTheme}=useContext(ThemeContext)
               <RxDropdownMenu />
             </button>
 
-            <ul
-              className={`${style.dropDownItems} ${
+       
+
+            <ul  className={`${style.dropDownItems} ${
                 isDropdownOpen ? style.active : ""
-              }`}
-            >
+              }`}>
+               <li>
+                <Link to={'/'}> Home</Link>
+              </li>
               <li>
-                <a href="#all-tasks"> All tasks</a>
+                <Link to={'/all'}> All tasks</Link>
+              </li>
+               <li>
+                <Link to={'/add'}> add task</Link>
               </li>
               <li>
                 <button onClick={toggleTheme} className={style.modeBtn}>

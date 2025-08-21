@@ -97,7 +97,7 @@ nav.dark {
 
 /* responsive */
 
-@media screen and (max-width: 725px) {
+@media screen and (max-width: 915px) {
   .navbar {
     display: none;
   }
