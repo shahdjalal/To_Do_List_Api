@@ -1,0 +1,99 @@
+
+
+header {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.taskBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.typewriter {
+  font-size: 25px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.taskIcon {
+  font-size: 40px;
+}
+
+.taskInput {
+  padding: 30px;
+  width: 50%;
+  border-radius: 2%;
+  border: none;
+  border-bottom: 1px solid #cccccc8a;
+  font-size: 20px;
+  transition: border-color 0.3s;
+  box-shadow: var(--boxShadow);
+}
+
+.taskInput:focus {
+  outline: none;
+  border: none;
+  border-bottom: solid 3px var(--mainColor);
+}
+
+.addBtn {
+  padding: 28px;
+  border: 0;
+  border-radius: 4%;
+  background-color: var(--mainColor);
+  font-size: 25px;
+  font-weight: 600;
+  box-shadow: var(--boxShadow);
+}
+
+.addBtn:hover {
+  cursor: pointer;
+  background-color: #6b63ffa3;
+  padding-right: 2px;
+}
+
+.addBtn.dark {
+  color: var(--darkText);
+}
+
+.error{
+
+  color: red;
+}
+
+
+
+@media screen and (max-width: 1315px) {
+  .taskInput {
+    width: 60%;
+  }
+}
+
+
+@media screen and (max-width: 640px) {
+  .taskInput {
+    width: 100%;
+  }
+  .addBtn {
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .typewriter {
+    font-size: 20px;
+  }
+}

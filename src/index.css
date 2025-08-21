@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+:root {
+  --mainColor: #6c63ff;
+  --boxShadow: 3px 6px 5px #11111199;
+  --boxShadowSDark: 3px 6px 5px #dad8d899;
+  --mainText: #111;
+  --darkText: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(to right, var(--mainColor), white);
+  color: #000;
+  color: rgba(0, 0, 0, 0.886);
+  background-size: cover;
+ 
+}
+
+.dark {
+  background-image: linear-gradient(to right, var(--mainColor), black);
+  color: var(--darkText);
+}
+
+* {
+  font-family: "Shantell Sans", cursive;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+  color: var(--mainText);
+}
+a:hover {
+  cursor: pointer;
+  transform: scale(1.5);
+}
+
+.dark a {
+  color: var(--darkText);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  width: calc(100% - 200px);
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* responsive */
+
+@media screen and (max-width: 725px) {
+  .container {
+    width: calc(100% - 50px);
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .container {
+    width: calc(100% - 10px);
+  }
+}

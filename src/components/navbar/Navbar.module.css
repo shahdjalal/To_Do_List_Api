@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap");
+
+nav {
+  background-image: linear-gradient(to right, var(--mainColor), white);
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+margin-bottom: 50px;
+}
+
+.logo {
+  font-family: "Playwrite VN", cursive;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.scrollNav {
+  box-shadow: var(--boxShadow);
+}
+.scrollNav.dark {
+  box-shadow: var(--boxShadowSDark);
+}
+
+nav.dark {
+  background-image: linear-gradient(to right, var(--mainColor), black);
+  color: var(--darkText);
+}
+
+.modeBtn {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  transition: transform 0.2s ease;
+}
+
+.modeBtn:hover {
+  cursor: pointer;
+  transform: scale(1.5);
+}
+
+.dark .modeBtn {
+  color: var(--darkText);
+}
+
+.dropDownContainer {
+  position: relative;
+  display: none;
+}
+
+.dropDownItems {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -80%;
+  width: 100%;
+  background-color: var(--mainColor);
+  border-radius: 8px;
+  box-shadow: var(--boxShadow);
+  z-index: 2;
+  width: max-content;
+}
+
+.dropDownItems.active {
+  display: block;
+}
+
+.dropDownBtn {
+  font-size: 45px;
+  padding: 5px 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+}
+.dark .dropDownBtn {
+  color: var(--darkText);
+}
+.dropDownBtn:hover {
+  cursor: pointer;
+}
+
+.dropDownItems li {
+  padding: 12px;
+  margin: 0;
+  transition: background-color 0.3s;
+  background-color: var(--mainColor);
+  cursor: pointer;
+}
+
+.dropDownItems li:hover {
+  background-color: #ffffffa9;
+}
+
+/* responsive */
+
+@media screen and (max-width: 725px) {
+  .navbar {
+    display: none;
+  }
+  .dropDownContainer {
+    display: block;
+  }
+}

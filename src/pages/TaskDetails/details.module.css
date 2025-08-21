@@ -1,0 +1,24 @@
+.error{
+
+  color: red;
+}
+
+.Taskdatils{
+    background-color: #ffffffa9;
+    margin: auto;
+    width: fit-content;
+    padding: 30px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 115px;
+    box-shadow: var(--boxShadow);
+
+}
+
+.back{
+text-decoration: underline;
+ margin-bottom: 100px;
+
+}

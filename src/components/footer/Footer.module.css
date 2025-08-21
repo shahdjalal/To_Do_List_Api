@@ -1,0 +1,24 @@
+footer {
+  margin-top: 80px;
+  padding: 40px;
+  background-color: #ffffffa9;
+  box-shadow: -2px -5px 16px rgba(0, 0, 0, 0.574);
+  text-align: center;
+
+}
+
+.dark {
+  background-color:var(--mainColor);
+  box-shadow: -1px -1px 10px var(--darkText);
+}
+
+.socialIcons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.dark a {
+  color: var(--darkText);
+}
